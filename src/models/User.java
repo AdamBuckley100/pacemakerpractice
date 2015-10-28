@@ -1,5 +1,8 @@
 package models;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.common.base.Objects;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
@@ -10,10 +13,10 @@ public class User
   public String lastName;
   public String email;
   public String password;
-  
   static Long   counter = 0l;
-
   public Long   id;
+  
+  public Map<Long, Activity> activities = new HashMap<>();
 
   public User()
   {
@@ -31,7 +34,6 @@ public class User
     this.lastName = lastName;
     this.email = email;
     this.password = password;
-
     this.id        = counter++;
   }
   
@@ -39,7 +41,7 @@ public class User
   public String toString()
   {
     return toStringHelper(this).addValue(id)
-    						    .addValue(firstName)
+    						   .addValue(firstName)
                                .addValue(lastName)
                                .addValue(password)
                                .addValue(email)                               
