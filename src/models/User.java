@@ -46,5 +46,11 @@ public class User
                                .addValue(password)
                                .addValue(email)                               
                                .toString();
-  }
+}
+
+  
+  
+  
+  
+  
 }
